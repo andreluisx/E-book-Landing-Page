@@ -1,0 +1,230 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+
+
+/* Design System - Landing Page Ebook "Criando Filhos Longe do Vício em Telas"
+   Paleta emocional: tons quentes (esperança) + tons frios/escuros (alerta)
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Core colors */
+    --background: 40 33% 98%;
+    --foreground: 220 30% 15%;
+
+    /* Cards */
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 15%;
+
+    /* Primary - Warm Orange (Hope/Action) */
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Soft Cream */
+    --secondary: 40 40% 94%;
+    --secondary-foreground: 220 30% 15%;
+
+    /* Muted */
+    --muted: 40 20% 92%;
+    --muted-foreground: 220 15% 45%;
+
+    /* Accent - Warm Yellow */
+    --accent: 45 100% 60%;
+    --accent-foreground: 220 30% 15%;
+
+    /* Alert/Warning - Deep Blue (Risk) */
+    --destructive: 220 70% 25%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Utility */
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 24 95% 53%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens for landing page */
+    --hope: 24 95% 53%;
+    --hope-light: 35 100% 65%;
+    --alert: 220 70% 25%;
+    --alert-light: 215 60% 40%;
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+
+    /* Gradients */
+    --gradient-hope: linear-gradient(135deg, hsl(24 95% 53%), hsl(35 100% 60%));
+    --gradient-alert: linear-gradient(135deg, hsl(220 70% 25%), hsl(215 50% 35%));
+    --gradient-warm: linear-gradient(180deg, hsl(40 33% 98%), hsl(40 40% 94%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(220 30% 15% / 0.1);
+    --shadow-glow: 0 8px 30px -8px hsl(24 95% 53% / 0.4);
+    --shadow-card: 0 2px 12px -2px hsl(220 30% 15% / 0.08);
+
+    /* Sidebar (unused but keeping for shadcn) */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+        /* Custom landing colors */
+    --hope: 24 94% 50%;
+    --hope-light: 24 94% 65%;
+    --alert: 0 84% 60%;
+    --alert-light: 0 84% 70%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 220 30% 8%;
+    --foreground: 40 20% 95%;
+
+    --card: 220 30% 12%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 220 30% 12%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 24 95% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 25% 18%;
+    --secondary-foreground: 40 20% 95%;
+
+    --muted: 220 25% 18%;
+    --muted-foreground: 40 15% 60%;
+
+    --accent: 45 100% 55%;
+    --accent-foreground: 220 30% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 25% 20%;
+    --input: 220 25% 20%;
+    --ring: 24 95% 55%;
+
+    --hope: 24 95% 55%;
+    --hope-light: 35 100% 60%;
+    --alert: 215 60% 50%;
+    --alert-light: 215 50% 60%;
+    --success: 142 70% 50%;
+    --success-foreground: 0 0% 100%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient-hope {
+    background: var(--gradient-hope);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-hope {
+    background: var(--gradient-hope);
+  }
+
+  .bg-gradient-alert {
+    background: var(--gradient-alert);
+  }
+
+  .bg-gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+}
+
+@layer components {
+  .section-container {
+    width: 100%;
+    max-width: 56rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .section-container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow:
+      0 0 0 0 hsl(var(--primary) / 0.5),
+      0 10px 30px -10px hsl(var(--primary) / 0.6);
+  }
+  50% {
+    box-shadow:
+      0 0 0 12px hsl(var(--primary) / 0),
+      0 15px 40px -5px hsl(var(--primary) / 0.8);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.2s ease-in-out infinite;
+}
