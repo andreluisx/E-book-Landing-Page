@@ -15,7 +15,7 @@ export function VideoSection() {
           <div className="relative aspect-9/16 md:aspect-video bg-black rounded-2xl overflow-hidden border-4 border-primary-foreground/20 shadow-lg">
             <iframe
               className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/CLpaAFLcTmY"
+              src="https://www.youtube.com/embed/1RyiU0io7Oc"
               title="Vídeo explicativo - Criança Sem Tela"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
